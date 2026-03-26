@@ -1,0 +1,50 @@
+<section class="card summary-grid">
+  <div>
+    <p class="label">Total Jobs</p>
+    <h2>{{ summary().total }}</h2>
+  </div>
+  <div>
+    <p class="label">Ready / Applied</p>
+    <h2>{{ summary().readyOrApplied }}</h2>
+  </div>
+</section>
+
+<section class="card filter-card">
+  <form [formGroup]="filterForm" (ngSubmit)="loadJobs()" class="filter-grid">
+    <input placeholder="Role" formControlName="role" />
+    <input placeholder="Company" formControlName="company" />
+    <input placeholder="Location" formControlName="location" />
+    <input placeholder="Status" formControlName="status" />
+    <input placeholder="Source" formControlName="source" />
+    <button type="submit">Search</button>
+  </form>
+  <p class="error" *ngIf="error()">{{ error() }}</p>
+</section>
+
+<section class="card jobs-table">
+  <p *ngIf="loading()">Loading jobs...</p>
+  <table *ngIf="!loading()">
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>Role</th>
+        <th>Location</th>
+        <th>Source</th>
+        <th>Found</th>
+        <th>Status</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let job of jobs()">
+        <td>{{ job.company }}</td>
+        <td>{{ job.role }}</td>
+        <td>{{ job.location }}</td>
+        <td>{{ job.source }}</td>
+        <td>{{ job.dateFound }}</td>
+        <td>{{ job.status }}</td>
+        <td>{{ job.relevanceScore }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
