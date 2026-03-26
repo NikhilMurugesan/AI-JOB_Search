@@ -5,6 +5,7 @@ from app.core.config import settings
 from app.core.logging import setup_logging
 from app.db.base import Base
 from app.db.session import engine
+from app.models.job import Job  # noqa: F401
 from app.models.resume import Resume  # noqa: F401
 
 setup_logging()
