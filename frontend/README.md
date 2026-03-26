@@ -1,18 +1,36 @@
 # Frontend (Angular)
 
-Step 1 keeps frontend lightweight but structured.
+This folder now contains a production-style **Step 1 frontend foundation** using Angular standalone APIs.
 
-## Recommended bootstrap command
+## What is included in Step 1
+- Angular app shell with routing.
+- Dashboard page scaffold with:
+  - summary cards
+  - search/filter form
+  - jobs table
+- API service seam targeting backend `GET /api/v1/jobs`.
+- Fallback demo jobs when backend is unavailable (useful for demos/interviews).
+
+## Why this structure is interview-quality
+- `core/` isolates shared models + API clients.
+- `features/` keeps domain modules independent and scalable.
+- Standalone Angular components reduce module boilerplate while staying production-friendly.
+
+## Run frontend
 ```bash
 cd frontend
-npx @angular/cli@latest new web --standalone --routing --style=scss
+npm install
+npm run start
 ```
 
-Then map generated app into this planned structure:
-- `src/app/core` for API clients, interceptors, config
-- `src/app/features/jobs` for jobs dashboard and details
-- `src/app/features/resumes` for upload/variants
-- `src/app/features/applications` for pipeline tracking
-- `src/app/shared` reusable UI components
+Open: http://localhost:4200
 
-In Step 2 we will wire real components to backend endpoints.
+## Typecheck/build
+```bash
+cd frontend
+npm run typecheck
+npm run build
+```
+
+## Next step
+Step 2 will add resume upload and full backend integration for real job ingestion + filtering.

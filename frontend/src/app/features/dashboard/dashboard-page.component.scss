@@ -1,0 +1,63 @@
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+
+  .label {
+    margin: 0;
+    color: #586781;
+  }
+
+  h2 {
+    margin: 0.3rem 0 0;
+  }
+}
+
+.filter-card,
+.jobs-table {
+  margin-top: 1rem;
+}
+
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+
+  input,
+  button {
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #ced5e1;
+    border-radius: 10px;
+    font-size: 0.9rem;
+  }
+
+  button {
+    cursor: pointer;
+    background: #2348e2;
+    color: white;
+    border-color: #2348e2;
+  }
+}
+
+.error {
+  color: #a83838;
+  margin: 0.75rem 0 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th,
+  td {
+    text-align: left;
+    border-bottom: 1px solid #e8ebf2;
+    padding: 0.6rem 0;
+  }
+
+  th {
+    color: #596883;
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
+}

@@ -4,7 +4,7 @@ A production-style full-stack project scaffold for an AI-powered job search assi
 
 ## Tech Stack
 - **Backend:** FastAPI + SQLAlchemy + SQLite (PostgreSQL-ready)
-- **Frontend:** Angular (scaffolded folder layout in this step)
+- **Frontend:** Angular standalone architecture (`frontend/`)
 - **LLM:** OpenAI-compatible client abstraction
 
 ## Step 1 Scope
@@ -15,7 +15,7 @@ A production-style full-stack project scaffold for an AI-powered job search assi
   - database setup
   - base domain model (`Resume`)
   - versioned API routing
-- Prepare frontend structure and integration plan
+- Create a runnable frontend shell with dashboard scaffold and API service seam
 
 ## Run backend
 ```bash
@@ -29,6 +29,16 @@ uvicorn app.main:app --reload --port 8000
 Open:
 - API docs: http://127.0.0.1:8000/docs
 - Health: http://127.0.0.1:8000/api/v1/health
+
+## Run frontend
+```bash
+cd frontend
+npm install
+npm run start
+```
+
+Open:
+- UI: http://localhost:4200
 
 ## Test backend
 ```bash
